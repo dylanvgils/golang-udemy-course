@@ -13,3 +13,4 @@
 - Go by Example [Link](https://gobyexample.com/)
 - Go Playground [Link](https://play.golang.org)
 - Awesome Go [Link](https://github.com/avelino/awesome-go)
+- Golang Books [Link](http://www.golang-book.com/)
