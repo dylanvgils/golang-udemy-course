@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"bitbucket.org/dylanvgils/udemy-golang-course/02_package/stringutil"
+	"github.com/dylanvgils/udemy-golang-course/02_package/stringutil"
 )
 
 func main() {
