@@ -1,0 +1,37 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+var wg sync.WaitGroup
+var counter int
+
+func incrementor(s string) {
+	rand.Seed(time.Now().UnixNano())
+	for i := 0; i < 50; i++ {
+		x := counter
+		x++
+		time.Sleep(time.Duration(rand.Intn(3)) * time.Millisecond)
+		counter = x
+		fmt.Println(s, i, "Counter:", counter)
+	}
+	wg.Done()
+}
+
+func main() {
+	wg.Add(2)
+	go incrementor("Foo:")
+	go incrementor("Bar:")
+	wg.Wait()
+	fmt.Println("Final counter:", counter)
+}
+
+/*
+	go run -race main.go
+	vs
+	go run main.go
+*/
